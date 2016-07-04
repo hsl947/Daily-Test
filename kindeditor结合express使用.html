@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻新增页面</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+    <script src="/lib/kindeditor/kindeditor-all-min.js"></script>
+    <script src="/lib/kindeditor/lang/zh-CN.js"></script>
+    <script>
+        //引入kindeditor模板
+        KindEditor.ready(function(K){
+            window.editor = K.create('#detail',{
+                resizeType:0,
+                width:'100%',
+                afterBlur:function(){this.sync();}
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/news/add" method="POST" class="form-horizontal">
+            <h2>新闻新增</h2>
+            <div class="form-group">
+                <label for="title" class="col-sm-2 control-label">标题</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control required" id="title" name="title" placeholder="请输入标题(纯文字，不能有标点符号)">
+                    <span class="required-sign">*</span>
+                    <span class="help-block">请输入标题</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="ImgUrls" id="ImgUrls" />
+                <label for="title" class="col-sm-2 control-label">图片</label>
+                <div class="col-sm-10">
+                    <input type="file" id="single_image" style="width:0px;height:0px;" name="image">
+                    <div class="ace-file-input col-xs-4 col-sm-2" id="yl_file_upload">
+                        <label class="file-label selected" data-title="Change">                           
+                            点击上传图片
+                        </label>
+                    </div>
+                    <div class="thumbnail col-xs-6 col-sm-3">
+                        <img id="m_imgCtrl" onerror="this.src='/images/err.jpg'" src="" style="max-height: 100px; display: block;" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="brief" class="col-sm-2 control-label">简介</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control required" name="brief" rows="3" placeholder="请输入简介"></textarea>
+                    <span class="required-sign">*</span>
+                    <span class="help-block">请输入简介</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="detail" class="col-sm-2 control-label">详情</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control required" name="detail" id="detail" rows="6" col="12" placeholder="请输入详情"></textarea>
+                    <span class="required-sign">*</span>
+                    <span class="help-block">请输入详情</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default btn-primary col-md-8 col-md-offset-2 col-sm-4" id="subBtn">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="/lib/bootstrap/js/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="/javascripts/validate_form.js"></script>
+    <script src="/javascripts/jquery.html5uploader.min.js"></script>
+    <script src="/javascripts/editor.js"></script>-->
+    <!--拼接压缩好的js文件-->
+    <script src="/javascripts/build-mini.js"></script>
+</body>
+
+</html>
+
+
+<!--在node.js框架下，同时使用art-template(简称AT)模板引擎和富文本编辑器kindeditor(简称KE)的话，
+KE输出的内容在AT的渲染下，所添加的样式标签会被转义，导致无法正常显示在页面中。此时有个解决办法：
+ 例如：<p>{{#data.detail}}</p>  在data前面加个#即可解决问题-->
