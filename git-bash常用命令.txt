@@ -1,0 +1,5 @@
+vim .gitignore
+esc + : + wqÍË³ö
+
+ls -al
+git init
