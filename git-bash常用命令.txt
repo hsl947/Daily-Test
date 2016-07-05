@@ -1,5 +1,8 @@
-vim .gitignore
+vim .gitignore   git仓库过滤文件，过滤不需要提交的文件或文件夹
 esc + : + wq退出
 
-ls -al
-git init
+ls -al 列出所有文件
+git init  初始化一个仓库
+git status  查看当前仓库的状态
+git add  把需要提交的文件添加到本地缓存
+git commit -m '提交信息'  把本地缓存中的文件提交到本地仓库
