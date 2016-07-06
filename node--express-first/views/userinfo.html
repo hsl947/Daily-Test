@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{include 'header'}}
+    <meta charset="UTF-8">
+    <title>个人信息-{{data.name}}</title>
+</head>
+<body>
+    <div class="container">
+        <p>姓名：{{data.name}}</p>
+        <p>年龄：{{data.age}}</p>
+        <p>性别：{{data.gender}}</p>
+        <p>手机：{{data.mobile}}</p>
+        <p>邮箱：{{data.email}}</p>
+        <p>学校：{{data.school}}</p>
+        <p>简介：{{data.desc}}</p>
+    </div>
+    {{include 'footer'}}
+</body>
+</html>

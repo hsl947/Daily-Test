@@ -1,0 +1,10 @@
+body{margin: 0;} 
+*{box-sizing: border-box;}
+main{width:50%;height:80%;margin: 20px auto;}
+h1{text-align: center;font-family: "黑体";font-weight: bold;}
+.required-sign{
+	position: absolute;
+	right: 0px;
+	top:10px;
+	color:#a94442;
+}
