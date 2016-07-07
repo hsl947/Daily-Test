@@ -1,8 +1,23 @@
-vim .gitignore   git仓库过滤文件，过滤不需要提交的文件或文件夹
+vim .gitignore   git仓库过滤文件，过滤不需要提交的文件或文件夹/
 esc + : + wq退出
 
 ls -al 列出所有文件
 git init  初始化一个仓库
 git status  查看当前仓库的状态
 git add  把需要提交的文件添加到本地缓存
+git add . 全部添加到本地缓存
 git commit -m '提交信息'  把本地缓存中的文件提交到本地仓库
+
+git branch 分支名  创建一个分支
+git checkout 分支名  切换到指定的分支
+git branch -d 分支名  删除一个分支
+git merge 分支名  把指定分支合并到主分支
+
+git log  查看日志
+git log --graph --pretty=oneline  加入一些美化和图像的命令
+git log --graph --pretty=oneline --abbrev-commit 
+
+git reset 回退版本
+
+-----
+gitstack windows下的git服务器程序
