@@ -19,5 +19,14 @@ git log --graph --pretty=oneline --abbrev-commit
 
 git reset 回退版本
 
+git reflog  查看日志
+git reset 回退版本 --hard  回退到指定的一次提交
+
+git tag tagName  为代码打标签，标签可以进行切换和直接发布
+
+
+
+gitstack软件
+
 -----
 gitstack windows下的git服务器程序
