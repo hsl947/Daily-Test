@@ -28,5 +28,9 @@ git tag tagName  为代码打标签，标签可以进行切换和直接发布
 
 gitstack软件
 
------
-gitstack windows下的git服务器程序
+
+远程服务器相关操作
+git remote -v  查看远程服务器信息
+git pull origin master:master  把远程master分支的代码拉取合并到本地的master分支
+git push origin master:master  把本地master分支的代码推送合并到服务器的master分支
+git clone 远程服务器地址    把远程服务器的代码clone到本地
