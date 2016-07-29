@@ -35,4 +35,3 @@ res.set（）：设置HTTP头，传入object可以一次设置多个头
 res.status（）：设置HTTP状态码
 res.type（）：设置Content-Type的MIME类型
 
- 
