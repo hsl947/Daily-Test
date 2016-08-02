@@ -1,0 +1,15 @@
+{
+  "name": "spider-app",
+  "version": "1.0.0",
+  "description": "网络爬虫小例子",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "souleigh",
+  "license": "ISC",
+  "dependencies": {
+    "crawler": "^0.4.3",
+    "mt-files-downloader": "^0.2.5"
+  }
+}
