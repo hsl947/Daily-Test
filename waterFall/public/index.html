@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流无限滚动</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/waterfall.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1 style="text-align: center;">瀑布流无限滚动</h1>
+    </div>
+    <div id="container" style="width: 1000px; margin: 0 auto;"></div>
+    <script type="text/x-handlebars-template" id="waterfall-tpl">
+        {{#data}}
+        <div class="item" style="text-align: center;">
+            <a href="{{bookUrl}}" target="_blank">
+                <img src="{{coverUrl}}" width="99px" style="margin: auto;" />
+                <p style="margin:0;margin-top: 5px;">{{title}}</p>
+                <p style="margin:0;font-size: 14px;color: grey;">{{author}}</p>
+            </a>
+        </div>
+        {{/data}}
+    </script>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/handlebars.js"></script>
+    <script src="javascripts/waterfall.js"></script>
+    <script>
+        $('#container').waterfall({
+            itemCls: 'item',
+            colWidth: 222,
+            gutterWidth: 15,
+            gutterHeight: 15,
+            fitWidth: false,
+            checkImagesLoaded: false,
+            path: function(page) {
+                return '/list/' + page;
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1245097-16']);
+        _gaq.push(['_trackPageview']);
+        _gaq.push(['_trackPageLoadTime']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = 'https://ssl.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+
+</html>

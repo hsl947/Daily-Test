@@ -1,0 +1,16 @@
+{
+  "name": "waterFall",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./app"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "express": "~4.13.4",
+    "serve-favicon": "~2.3.0",
+    "crawler": "^0.4.3",
+    "mongoose": "^4.5.6"
+  }
+}
