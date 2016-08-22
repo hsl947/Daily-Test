@@ -1,4 +1,15 @@
+/**
+ * 全局安装gulp
+ * npm install --global gulp
+ * 安装依赖项
+ * npm install gulp-jshint gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
+ * 运行gulp
+ * gulp
+ */
+
+// 引入 gulp
 var gulp        = require('gulp');
+// 引入组件
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var minifyCSS   = require('gulp-minify-css');
