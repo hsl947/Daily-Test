@@ -10,11 +10,11 @@
 // 引入 gulp
 var gulp        = require('gulp');
 // 引入组件
-var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
-var minifyCSS   = require('gulp-minify-css');
-var rename      = require('gulp-rename');
-var browserSync = require('browser-sync').create();
+var sass        = require('gulp-sass');// Sass 编译成 CSS
+var prefix      = require('gulp-autoprefixer');//根据设置浏览器版本自动处理浏览器前缀
+var minifyCSS   = require('gulp-minify-css'); //压缩css
+var rename      = require('gulp-rename'); //重命名文件
+var browserSync = require('browser-sync').create();// 实时响应，自动刷新
 
 // Static server
 gulp.task('browser-sync', function() {
