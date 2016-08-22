@@ -1,4 +1,10 @@
 /**
+ *  1、安装nodejs；
+    2、新建package.json文件；
+    3、全局和本地安装gulp；
+    4、安装gulp插件；
+    5、新建gulpfile.js文件；
+    6、通过命令提示符运行gulp任务。
  * 全局安装gulp
  * npm install --global gulp
  * 安装依赖项
