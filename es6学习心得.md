@@ -101,3 +101,16 @@ $ babel-node
   }
 }
 ```
+
+5. 实时转码，只适合在开发环境使用（babel-register）
+```javascript
+$ npm install --save-dev babel-register
+
+require("babel-register");
+require("./index.js");
+```
+
+6. 调用 Babel 的 API 进行转码（babel-core）
+```javascript
+$ npm install babel-core --save
+```
