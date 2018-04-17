@@ -1,0 +1,33 @@
+$(window).scroll(function(event) {
+    var winPos = $(window).scrollTop();
+    if (winPos >= 100 && winPos <= 1000) {
+        $("#left-slidemenu li").eq(0).addClass('active').siblings().removeClass('active');
+    } else if (winPos >= 1001 && winPos <= 1600) {
+        $("#left-slidemenu li").eq(1).addClass('active').siblings().removeClass('active');
+    } else if (winPos >= 1601 && winPos <= 2200) {
+        $("#left-slidemenu li").eq(2).addClass('active').siblings().removeClass('active');
+    } else if (winPos >= 2201 && winPos <= 3000) {
+        $("#left-slidemenu li").eq(3).addClass('active').siblings().removeClass('active');
+    } else if (winPos >= 3001) {
+        $("#left-slidemenu li").eq(4).addClass('active').siblings().removeClass('active');
+    } else {
+        $("#left-slidemenu li").removeClass('active');
+    }
+});
+jQuery(document).ready(function($) {
+    $("#left-slidemenu li").click(function(event) {
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        if (index == 5) {
+            $('body,html').animate({
+                    scrollTop: 0
+                },
+                800); //点击回到顶部按钮，缓回到顶部,数字越小越快
+            return false;
+        }
+        var id = '#' + 'index_' + index;
+        $("html,body").animate({
+            scrollTop: $(id).offset().top
+        }, 800);
+    });
+});
