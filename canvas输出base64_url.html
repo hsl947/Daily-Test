@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script>
+        var canvas = document.createElement('canvas');
+        var ctx = document.getElementById('canvas').getContext('2d');
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'red';
+        ctx.moveTo(100, 100);
+        ctx.lineTo(100, 200);
+        ctx.stroke();
+
+        var img = new Image();
+        img.src = '1.png';
+        img.onload = function(){
+            ctx.drawImage(img, 100, 100, 150, 100);
+        };
+        var base64_url = canvas.toDataURL('image/jpeg', 0.5);
+    </script>
+</body>
+</html>
