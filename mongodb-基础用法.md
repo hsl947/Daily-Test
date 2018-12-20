@@ -80,6 +80,41 @@
     ```
 
 
+1.查看所有数据库: 
+	show dbs
+2.切换到数据库runoob: 
+	use runoob
+3.创建集合(创建数据库)： 
+	db.createCollection("user") 或是
+	db.user.insert({"name":"菜鸟教程","class":"初三"})  直接创建表及插入数据
+4.插入文档/数据：  user是表名
+	db.user.insert({"userid":101,"username":"秀秀","age":20,"class":{"classname":"初三","num":6}})
+5.删除:  
+	a.删除数据库
+		db.dropDatabase()(切记要先切换到要删除的数据库 然后在直接该语句) 
+    b.删除集合/表user：
+		db.user.drop()
+	c.删除某一条数据
+		db.user.remove({'username':'秀秀'})
+	d.删除表内所有数据
+		db.user.remove({})
+6.查看table的数据：user是表名
+	a.查看table的数据:
+		db.user.find()
+		db.user.find().pretty() pretty() 方法以格式化的方式来显示所有文档。
+	b.找到第一条数据 :db.user.findOne() 
+	c.查找范围：
+		db.user.find({"age" : {$gt : 20}})  大于20岁的数据
+		db.user.find({"age": {$gte : 20}})  大于等于20岁的数据
+		db.user.find({"age": {$lt : 20}})   小于20岁的数据
+		db.user.find({"age": {$lte : 20}})  小于等于20岁的数据
+		db.user.find({"age": {$lt :30, $gt : 10}})  大于10 小于30的数据
+7.更新文档：
+	a.更新
+		db.user.update({查找的条件},{$set:{更新的内容}})
+	b.更新子文档：class.num
+		db.user.update({'username':'秀秀'},{$set:{'class.num':3}})
+
 ### nodejs中间件
 
 [http://mongoosejs.com/](http://mongoosejs.com/)
