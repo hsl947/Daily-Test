@@ -117,7 +117,7 @@
 
 db.shutdownServer()
 service mongod stop
-mongod -dbpath /var/lib/mongo -logpath /var/log/mongodb/mongod.log -logappend -fork -port 27017
+mongod -dbpath /var/lib/mongo -logpath /var/log/mongodb/mongod.log -fork -port 27017
 db.auth('root', 'xxxx')
 
 
