@@ -115,6 +115,8 @@
 	b.更新子文档：class.num
 		db.user.update({'username':'秀秀'},{$set:{'class.num':3}})
 
+db.shutdownServer()
+mongod -dbpath /var/lib/mongo -logpath /var/log/mongodb/mongod.log -logappend -fork -port 27017
 ### nodejs中间件
 
 [http://mongoosejs.com/](http://mongoosejs.com/)
