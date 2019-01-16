@@ -116,7 +116,11 @@
 		db.user.update({'username':'秀秀'},{$set:{'class.num':3}})
 
 db.shutdownServer()
+service mongod stop
 mongod -dbpath /var/lib/mongo -logpath /var/log/mongodb/mongod.log -logappend -fork -port 27017
+db.auth('root', 'xxxx')
+
+
 ### nodejs中间件
 
 [http://mongoosejs.com/](http://mongoosejs.com/)
